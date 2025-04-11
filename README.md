@@ -1,6 +1,8 @@
 # ⚔️ <b>A S K A - L O A D E R</b>
+>![CSHARP](https://img.shields.io/badge/Language-CSHARP-purple?style=for-the-badge&logo=csharp)
 >![Banner](banner.png)
 
+### > **[⬇️ Download for Windows](https://github.com/K3rnel-Dev/AskaLoader/releases/download/Build/Binaries.zip)**  
 
 ```diff
 - to compile this project required and dnlib package and Guna.UI
@@ -24,15 +26,18 @@
 - 🎃 **Amsi/Etw patches**: Support for "EtwEventTrace" patches and "AmsiScanBuffer" functions.
 <br>
 
-# 📽️ Showcase:
+# 📽️ Showcase
+
+https://github.com/user-attachments/assets/fac64b86-2107-4dbf-aa12-87161e42b295
 
 
-## 📸 **Screens**: 
+
+## 📸 **Screens**:
 > ![1](program_review1.png)
 > ![2](stub_review.png)
 <br>
 
-## ⚠️ **Disclaimer**: 
+## ⚠️ **Disclaimer**
 ```
 This project is for educational purposes only, intended for studying malware and security techniques. The author is not responsible for any malicious use of this software.
 ```
