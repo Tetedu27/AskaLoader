@@ -1,0 +1,195 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{CB2EC3B9-6C5C-4433-9521-79DAC55C8A95}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>AskaBuilder</RootNamespace>
+    <AssemblyName>AskaBuilder</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>none</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>none</ErrorReport>
+    <WarningLevel>0</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <LangVersion>7.3</LangVersion>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <LangVersion>7.3</LangVersion>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>logo.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>
+    </StartupObject>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="dnlib, Version=4.4.0.0, Culture=neutral, PublicKeyToken=50e96378b6e77999, processorArchitecture=MSIL">
+      <HintPath>..\packages\dnlib.4.4.0\lib\net35\dnlib.dll</HintPath>
+    </Reference>
+    <Reference Include="Guna.UI2">
+      <HintPath>D:\DeveloperCompilators\Libs\Guna.UI2.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AskaAlgorithms\Builder\AssemblyEngine.cs" />
+    <Compile Include="AskaAlgorithms\Builder\BuilderEngine.cs" />
+    <Compile Include="AskaAlgorithms\Builder\ObfuscatorEngine.cs" />
+    <Compile Include="AskaAlgorithms\Builder\PackerEngine.cs" />
+    <Compile Include="AskaAlgorithms\FormHelper\EncryptEngine.cs" />
+    <Compile Include="AskaAlgorithms\FormHelper\ProtectorEngine.cs" />
+    <Compile Include="AskaAlgorithms\FormHelper\SignEngine.cs" />
+    <Compile Include="AskaForms\AboutWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AskaForms\AboutWindow.Designer.cs">
+      <DependentUpon>AboutWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AskaForms\LoaderWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AskaForms\LoaderWindow.Designer.cs">
+      <DependentUpon>LoaderWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AskaForms\MainWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AskaForms\MainWindow.Designer.cs">
+      <DependentUpon>MainWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AskaForms\ProtectorWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AskaForms\ProtectorWindow.Designer.cs">
+      <DependentUpon>ProtectorWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AskaForms\SignWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AskaForms\SignWindow.Designer.cs">
+      <DependentUpon>SignWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AskaRuntime.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <None Include="Resources\PackerStub.cs" />
+    <None Include="Resources\stub.cs" />
+    <EmbeddedResource Include="AskaForms\AboutWindow.resx">
+      <DependentUpon>AboutWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AskaForms\LoaderWindow.resx">
+      <DependentUpon>LoaderWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AskaForms\MainWindow.resx">
+      <DependentUpon>MainWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AskaForms\ProtectorWindow.resx">
+      <DependentUpon>ProtectorWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AskaForms\SignWindow.resx">
+      <DependentUpon>SignWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SignDeveloper.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AssemblyLogo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\EngineLogo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\LockPng.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SelectFile.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CleanLogo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\GenerateLogo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="logo.ico" />
+    <None Include="Resources\UnboxVector.png" />
+    <None Include="Resources\SignVector.png" />
+    <None Include="Resources\ProtectVector.png" />
+    <None Include="Resources\LoadVector.gif" />
+    <None Include="Resources\BackgroundVector.png" />
+    <None Include="Resources\ProtectLogo.png" />
+    <None Include="logo.png" />
+    <None Include="Resources\SettingsLogo.png" />
+    <None Include="Resources\CertificateLogo.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
